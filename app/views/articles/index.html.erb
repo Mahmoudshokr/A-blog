@@ -1,0 +1,16 @@
+<h1>All articles</h1>
+    <ul>
+       
+            <% @article.each do |t| %>
+             <li>
+                <p>
+                    title: <%= t.title %>
+                </p>
+                <p>
+                    description: <%= t.description%>
+                </p>
+                 _____________________________________
+                 </li>
+            <% end %>       
+        
+    </ul>

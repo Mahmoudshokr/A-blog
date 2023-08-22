@@ -9,6 +9,8 @@
                 <p>
                     description: <%= t.description%>
                 </p>
+                <%= link_to 'edit article', edit_article_path(t.id)%>
+                <br>
                  _____________________________________
                  </li>
             <% end %>       

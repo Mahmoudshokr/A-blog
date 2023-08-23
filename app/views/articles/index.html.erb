@@ -9,7 +9,10 @@
                 <p>
                     description: <%= t.description%>
                 </p>
-                <%= link_to 'edit article', edit_article_path(t.id)%>
+                <%= link_to 'Edit ', edit_article_path(t)%>
+                <%= link_to 'View', article_path(t)%>
+                <%= link_to 'Create new', new_article_path%>
+                <%= link_to 'Delete', article_path(t), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
                 <br>
                  _____________________________________
                  </li>

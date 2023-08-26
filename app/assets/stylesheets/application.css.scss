@@ -1,0 +1,70 @@
+#m{
+   background-color: goldenrod !important;
+} 
+
+#logo{
+    float: left;
+    font-size: 1.7em;
+    color: #ffff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#logo:hover{
+    color: #ffff;
+    text-decoration: none;
+}
+
+#center{
+    position: relative;
+    left: 20px;
+}
+.center{
+ text-align: center;
+}
+.jumpotron{
+    background-image: asset-url('ruby.png');
+    background-size:fit;
+    height: 460px;
+}
+
+.jumpotron h1{
+    color: #ffff;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+}
+
+.signup{
+    font-size: 1.7em;
+    background-color: black !important;
+   
+}
+
+footer {
+    margin-top: 120px;
+    padding-top: 5px;
+    border-top: 1px solid #eaeaea;
+    color: #777;
+}
+
+footer a:hover{
+    color: #222;
+}
+
+footer small{
+    float: left;
+}
+
+footer ul{
+    float: right;
+    list-style: none;
+}
+
+footer ul li{
+    float: left;
+    margin-left: 15px;
+}
+@import 'bootstrap';
+

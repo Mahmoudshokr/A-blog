@@ -1,21 +1,21 @@
-<h1>All articles</h1>
-    <ul>
-       
-            <% @article.each do |t| %>
-             <li>
-                <p>
-                    title: <%= t.title %>
-                </p>
-                <p>
-                    description: <%= t.description%>
-                </p>
-                <%= link_to 'Edit ', edit_article_path(t)%>
-                <%= link_to 'View', article_path(t)%>
-                <%= link_to 'Create new', new_article_path%>
-                <%= link_to 'Delete', article_path(t), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-                <br>
-                 _____________________________________
-                 </li>
-            <% end %>       
-        
-    </ul>
+<h1 align="center">All articles</h1>
+
+<% @article.each do |t| %>
+    <div>
+        <div class="col-sm-8 offset-sm-2 card card-body bg-light" style="margin-bottom:10px">
+            <div class="article-title">
+                <%= link_to t.title, article_path(t), style:"text-decoration: none ;" %>
+            </div>
+
+            <div class="article-body">
+                 <%= truncate(t.description, length: 10 )%>
+            </div>
+
+            <div class="actions"> 
+                <%= link_to 'edit', edit_article_path(t), class: "btn btn-sm btn-primary"%>
+                <%= link_to 'Delete', article_path(t), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:"btn btn-sm btn-danger" %>
+            </div>  
+        </div>
+    </div>                
+<% end %>       
+  

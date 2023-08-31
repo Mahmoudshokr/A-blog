@@ -10,7 +10,13 @@
             <div class="article-body">
                  <%= truncate(t.description, length: 10 )%>
             </div>
-
+            <div class="article_meta_details">
+                <small>
+                    created by: <%= t.user.username if t.user %>
+                    <%= time_ago_in_words(t.created_at) %> ago,
+                    <%= time_ago_in_words(t.updated_at) %> ago,
+                </small>
+            </div>
             <div class="actions"> 
                 <%= link_to 'edit', edit_article_path(t), class: "btn btn-sm btn-primary"%>
                 <%= link_to 'Delete', article_path(t), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:"btn btn-sm btn-danger" %>

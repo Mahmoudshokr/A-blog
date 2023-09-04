@@ -1,0 +1,20 @@
+<div>
+
+<h2 align="center"> <%= @user.username %> </h2>
+
+<div class="col-sm-4 offset-sm-4 center">
+<%= gravatar_for @user%>
+</div>
+</div>
+    <div class="card card-body bg-light col-sm-8 offset-sm-2">
+       <div class="actions"> 
+            <%= link_to 'edit', edit_user_path(@user), class: "btn btn-sm btn-primary"%>
+            <%= link_to 'Delete', user_path(@user), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:"btn btn-sm btn-danger" %>
+            <%= link_to 'view all users', users_path, class: "btn btn-sm btn-success" %>
+       </div>
+          <hr>
+           <h4 class="center "><strong>here's all <%= @user.username %> articles </strong></h4>
+
+    </div>
+
+    <%= render 'articles/article', obj:@user.articles %>

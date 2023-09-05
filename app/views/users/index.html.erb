@@ -4,11 +4,13 @@
     <div>
         <div class="col-sm-8 offset-sm-2 card card-body bg-light" style="margin-bottom:10px">
             <div class="user-username">
+            <%= link_to gravatar_for(t), user_path(t) %>
                 <%= link_to t.username, user_path(t), style:"text-decoration: none ;" %>
             </div>
 
             <div class="user-body">
-                 <%= truncate(t.email, length: 10 )%>
+                 <%= t.email%><br>
+                 <%= pluralize(t.articles.count,"article") if t.articles%>
             </div>
         
             <div class="actions"> 

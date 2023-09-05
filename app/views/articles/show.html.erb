@@ -11,3 +11,13 @@
             <%= link_to 'view all articles', articles_path, class: "btn btn-sm btn-success" %>
        </div>    
     </div>
+    <h4>Created by:</h4><br>
+     <div class="user-username">
+            <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
+                <%= link_to @article.user.username, user_path(@article.user), style:"text-decoration: none ;" %>
+            </div>
+
+            <div class="user-body">
+                 <%= @article.user.email%>
+                 <%= pluralize(@article.user.articles.count,"article") if @article.user.articles%>
+            </div>

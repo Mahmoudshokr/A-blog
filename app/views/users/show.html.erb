@@ -17,4 +17,11 @@
 
     </div>
 
-    <%= render 'articles/article', obj:@user.articles %>
+    <%= render 'articles/article', obj:@user_articles %>
+    <div align="center" >
+        <%= page_entries_info @user_articles %>
+</div>
+<br>
+<div class="d-flex justify-content-center" >
+ <%= will_paginate @user_articles %>
+ </div>  
